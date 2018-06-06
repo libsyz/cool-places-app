@@ -9,10 +9,11 @@ import { HomePage } from '../pages/home/home';
 import { PlacePage } from './../pages/place/place';
 import { SetLocationPage } from './../pages/set-location/set-location';
 import { AddPlacePage } from './../pages/add-place/add-place';
+import { PlaceService } from './../services/place.service';
 
 import { AgmCoreModule } from '@agm/core';
 import { Geolocation } from '@ionic-native/geolocation';
-
+import { Camera } from '@ionic-native/camera'
 
 @NgModule({
   declarations: [
@@ -40,6 +41,8 @@ import { Geolocation } from '@ionic-native/geolocation';
   providers: [
     StatusBar,
     Geolocation,
+    Camera,
+    PlaceService,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

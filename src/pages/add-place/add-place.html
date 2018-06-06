@@ -54,6 +54,7 @@
         <ion-col *ngIf="locationIsSet">
           <agm-map [latitude]="location.lat" [longitude]="location.lng"
           [zoom]="10">
+          <agm-marker [latitude]="location.lat" [longitude]="location.lng"></agm-marker>
           </agm-map>
         </ion-col>
       </ion-row>
@@ -69,7 +70,7 @@
           block
           outline
           type="button"
-          (click)="onTakePhoto()">
+          (click)="onShowCamera()">
           <ion-icon icon-left name="camera"></ion-icon>
           Open Camera
         </button>
@@ -93,4 +94,8 @@
     </ion-grid>
   </form>
 
+  <video autoplay="true" *ngIf="cameraIsActive"></video>
+  <img [src]="src" *ngIf="imageIsActive">
+  <canvas style="display: none;"> </canvas>
+  <button ion-button block outline (click)="onTakePicture()" *ngIf="cameraIsActive"> Take Pic </button>
 </ion-content>
