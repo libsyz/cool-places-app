@@ -11,6 +11,7 @@ import { SetLocationPage } from './../pages/set-location/set-location';
 import { AddPlacePage } from './../pages/add-place/add-place';
 
 import { AgmCoreModule } from '@agm/core';
+import { Geolocation } from '@ionic-native/geolocation';
 
 
 @NgModule({
@@ -25,7 +26,7 @@ import { AgmCoreModule } from '@agm/core';
     BrowserModule,
     AgmCoreModule.forRoot({
       apiKey: 'AIzaSyAUDVqcEjgXZUc7DNhOzS9Pp2NqS7qwkok'
-    })
+    }),
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -38,6 +39,7 @@ import { AgmCoreModule } from '@agm/core';
   ],
   providers: [
     StatusBar,
+    Geolocation,
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler}
   ]

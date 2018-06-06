@@ -33,7 +33,7 @@
           outline 
           type="button" 
           icon-left 
-          (click)="onLocate"> 
+          (click)="onLocate()"> 
           <ion-icon name="locate"></ion-icon>
           Locate Me
           </button>
@@ -51,8 +51,10 @@
         </ion-col>
       </ion-row>
       <ion-row>
-        <ion-col>
-          <p>Selected Place...</p>
+        <ion-col *ngIf="locationIsSet">
+          <agm-map [latitude]="location.lat" [longitude]="location.lng"
+          [zoom]="10">
+          </agm-map>
         </ion-col>
       </ion-row>
       <ion-row>
